@@ -1,8 +1,8 @@
-# 🧠 Team Task Manager API
+#  Team Task Manager API
 
 This project is a RESTful backend API for managing tasks between Admins and Members.
 
-## ✅ Features
+## Features
 
 -   Role-based Auth (Admin, Member)
 -   Sanctum Token Authentication
@@ -12,20 +12,7 @@ This project is a RESTful backend API for managing tasks between Admins and Memb
 -   Soft Delete (with Restore & Force Delete)
 -   Clean MVC structure + Laravel standards
 
-## 🔧 Setup Instructions
 
-````bash
-git clone https://github.com/Charlesuwaje/Task-managements.git
-
-composer install
-
-# Configure your DB in `.env`
-
-php artisan migrate --seed
-
-
-php artisan serve
-````
 ## Supported Module Commands
 
 ### Create controller in a module
