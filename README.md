@@ -23,7 +23,6 @@ composer install
 
 php artisan migrate --seed
 
-composer require maatwebsite/excel
 
 php artisan serve
 ````
