@@ -10,7 +10,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use App\Modules\User\Notifications\TaskAssignedNotification;
-
+use Illuminate\Support\Facades\Log;
 class SendTaskAssignedNotification implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;

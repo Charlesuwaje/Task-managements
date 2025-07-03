@@ -2,11 +2,12 @@
 
 namespace App\Modules\Imports;
 
+use Carbon\Carbon;
 use App\Models\Task;
 use App\Models\User;
+use App\Modules\Enums\TaskStatus;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Log;
-use App\Modules\Enums\TaskStatus;
 use Maatwebsite\Excel\Concerns\ToCollection;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use PhpOffice\PhpSpreadsheet\Shared\Date as ExcelDate;
@@ -55,8 +56,8 @@ class TaskImport implements ToCollection, WithHeadingRow
 
             try {
                 $dueDate = is_numeric($row['due_date'])
-                    ? \Carbon\Carbon::instance(ExcelDate::excelToDateTimeObject($row['due_date']))
-                    : \Carbon\Carbon::parse($row['due_date']);
+                    ? Carbon::instance(ExcelDate::excelToDateTimeObject($row['due_date']))
+                    : Carbon::parse($row['due_date']);
 
                 $task = Task::create([
                     'title' => $row['title'],

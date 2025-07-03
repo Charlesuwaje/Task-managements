@@ -1,6 +1,6 @@
 #  Team Task Manager API
 
-This project is a RESTful backend API for managing tasks between Admins and Members.
+This project is a RESTful backend API for managing tasks between Admins and Members. Note this is spited in to two parts which is Members sections  and Admin sections and the routes are separated also.
 
 ## Features
 

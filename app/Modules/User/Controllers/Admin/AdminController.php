@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Modules\User\Controllers\Admin;
+
 use Illuminate\Http\Request;
 use App\Modules\Services\AdminService;
 use App\Http\Controllers\ApiController;

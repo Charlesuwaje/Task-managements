@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Modules\User\Controllers\Admin;
+
 use App\Models\Task;
 use Illuminate\Http\Request;
 use App\Modules\Imports\TaskImport;
@@ -74,23 +75,22 @@ class AdminTaskController extends ApiController
     }
 
     public function import(Request $request)
-{
-    $request->validate([
-        'file' => 'required|file|mimes:xlsx,xls,csv',
-    ]);
-
-    $import = new TaskImport();
-    Excel::import($import, $request->file('file'));
-
-    $errors = $import->getErrors();
-
-    if (!empty($errors)) {
-        return $this->error('Some rows failed to import.', 422, [], [
-            'failures' => $errors
+    {
+        $request->validate([
+            'file' => 'required|file|mimes:xlsx,xls,csv',
         ]);
+
+        $import = new TaskImport();
+        Excel::import($import, $request->file('file'));
+
+        $errors = $import->getErrors();
+
+        if (!empty($errors)) {
+            return $this->error('Some rows failed to import.', 422, [], [
+                'failures' => $errors
+            ]);
+        }
+
+        return $this->Ok('Tasks imported successfully.');
     }
-
-    return $this->Ok('Tasks imported successfully.');
-}
-
 }
